@@ -12,6 +12,10 @@ function createPieChart(income, expense) {
         data: [income, expense],
         backgroundColor: ["#16A34A", "#DC2626"]
       }]
+    },
+    options:{
+      responsive : true,
+      maintainAspectRatio: false
     }
   });
 }
@@ -34,6 +38,8 @@ function createBarChart(categoriesObj) {
       }]
     },
     options: {
+      responsive: true,
+      maintainAspectRatio: false,
       scales: {
         y: { beginAtZero: true }
       }

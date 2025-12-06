@@ -27,17 +27,27 @@
   <main class="ml-64 w-full p-8">
     <h1 class="text-3xl font-bold mb-6">Insights & Analytics</h1>
 
-    <!-- Income vs Expense Pie -->
-    <section class="bg-white p-6 rounded-xl shadow mb-8">
-      <h2 class="text-xl font-semibold mb-4">Income vs Expense</h2>
-      <canvas id="pieChart"></canvas>
-    </section>
+    <!-- Charts Grid (FIXED SIZE - No Scroll) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 h-[75vh]">
 
-    <!-- Category bar chart -->
-    <section class="bg-white p-6 rounded-xl shadow mb-8">
-      <h2 class="text-xl font-semibold mb-4">Category-wise Expenses</h2>
+  <!-- Income vs Expense -->
+  <div class="bg-white p-4 rounded-xl shadow flex flex-col items-center justify-center">
+    <h2 class="font-semibold mb-2">Income vs Expense</h2>
+    <div class="w-full max-w-sm h-72">
+      <canvas id="pieChart"></canvas>
+    </div>
+  </div>
+
+  <!-- Category-wise Expenses -->
+  <div class="bg-white p-4 rounded-xl shadow flex flex-col items-center justify-center">
+    <h2 class="font-semibold mb-2">Category-wise Expenses</h2>
+    <div class="w-full max-w-sm h-72">
       <canvas id="barChart"></canvas>
-    </section>
+    </div>
+  </div>
+
+</div>
+
   </main>
 
   <script type="module" src="js/api.js"></script>
