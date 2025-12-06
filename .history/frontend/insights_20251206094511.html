@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ExpensaX - Insights</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body class="bg-gray-100 flex">
+
+  <!-- Sidebar -->
+  <aside class="w-64 h-screen bg-white shadow-lg fixed left-0 top-0 p-6">
+    <h2 class="text-2xl font-bold text-indigo-600 mb-8">ExpensaX</h2>
+
+    <nav class="space-y-4">
+      <a href="index.html" class="block font-medium text-gray-700 hover:text-indigo-600">Dashboard</a>
+      <a href="transactions.html" class="block font-medium text-gray-700 hover:text-indigo-600">Transactions</a>
+      <a href="insights.html" class="block font-medium text-indigo-600">Insights</a>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="ml-64 w-full p-8">
+    <h1 class="text-3xl font-bold mb-6">Insights & Analytics</h1>
+
+    <!-- Charts Grid (FIXED SIZE - No Scroll) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 h-[75vh]">
+
+  <!-- Income vs Expense -->
+  <div class="bg-white p-4 rounded-xl shadow flex flex-col items-center justify-center">
+    <h2 class="font-semibold mb-2">Income vs Expense</h2>
+    <div class="w-full max-w-sm h-72">
+      <canvas id="pieChart"></canvas>
+    </div>
+  </div>
+
+  <!-- Category-wise Expenses -->
+  <div class="bg-white p-4 rounded-xl shadow flex flex-col items-center justify-center">
+    <h2 class="font-semibold mb-2">Category-wise Expenses</h2>
+    <div class="w-full max-w-sm h-72">
+      <canvas id="barChart"></canvas>
+    </div>
+  </div>
+
+</div>
+
+  </main>
+
+  <script type="module" src="js/api.js"></script>
+  <script type="module" src="js/insights.js"></script>
+</body>
+</html>
