@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ExpensaX - Transactions</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 flex">
+
+  <!-- Sidebar -->
+  <aside class="w-64 h-screen bg-white shadow-lg fixed left-0 top-0 p-6">
+    <h2 class="text-2xl font-bold text-indigo-600 mb-8">ExpensaX</h2>
+
+    <nav class="space-y-4">
+      <a href="index.html" class="block font-medium text-gray-700 hover:text-indigo-600">Dashboard</a>
+      <a href="transactions.html" class="block font-medium text-indigo-600">Transactions</a>
+      <a href="insights.html" class="block font-medium text-gray-700 hover:text-indigo-600">Insights</a>
+    </nav>
+  </aside>
+
+  <!-- Main -->
+  <main class="ml-64 w-full p-8">
+
+    <!-- Header -->
+    <div class="flex justify-between items-center mb-10">
+      <h1 class="text-3xl font-bold">Transactions</h1>
+      <button class="px-4 py-2 rounded-md bg-indigo-600 text-white hover:bg-indigo-700" id="addBtn">
+        + Add Transaction
+      </button>
+    </div>
+
+    <!-- Desktop Table View -->
+    <div class="hidden md:block overflow-auto">
+      <table class="w-full bg-white shadow rounded-xl">
+        <thead>
+          <tr class="bg-gray-200 text-left">
+            <th class="p-4">Title</th>
+            <th class="p-4">Category</th>
+            <th class="p-4">Type</th>
+            <th class="p-4">Amount</th>
+            <th class="p-4">Date</th>
+            <th class="p-4">Action</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+    </div>
+
+    <!-- Mobile Card View -->
+    <div id="cardList" class="md:hidden flex flex-col gap-4 mt-6"></div>
+
+  </main>
+
+  <!-- Add Transaction Side Panel -->
+  <div id="addPanel"
+    class="fixed top-0 right-0 h-full w-96 bg-white shadow-xl p-6 transform translate-x-full transition-transform duration-300 overflow-y-auto">
+    <h2 class="text-2xl font-bold mb-6">Add Transaction</h2>
+
+    <label class="block font-medium">Amount</label>
+    <input id="amountInput" type="number" class="w-full p-3 border rounded-lg mb-4" placeholder="Enter amount">
+
+    <label class="block font-medium">Title</label>
+    <input id="titleInput" type="text" class="w-full p-3 border rounded-lg mb-4" placeholder="e.g. Rent, Swiggy Order">
+
+    <label class="block font-medium">Type</label>
+    <select id="typeSelect" class="w-full p-3 border rounded-lg mb-4">
+      <option value="expense">Expense</option>
+      <option value="income">Income</option>
+    </select>
+
+    <label class="block font-medium">Category</label>
+    <select id="categorySelect" class="w-full p-3 border rounded-lg mb-6">
+      <option value="Food">Food</option>
+      <option value="Rent">Rent</option>
+      <option value="Shopping">Shopping</option>
+      <option value="Medicine">Medicine</option>
+      <option value="Utilities">Utilities</option>
+      <option value="Subscription">Subscription</option>
+      <option value="Salary">Salary</option>
+    </select>
+
+    <button id="saveTransaction" class="w-full bg-indigo-600 p-3 text-white rounded-lg font-bold">Save</button>
+    <button id="closePanel" class="w-full mt-3 p-2 bg-gray-300 rounded-lg font-medium">Cancel</button>
+  </div>
+
+  <script type="module" src="js/api.js"></script>
+  <script type="module" src="js/transactions.js"></script>
+</body>
+</html>
